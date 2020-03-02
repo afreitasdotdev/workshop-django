@@ -25,7 +25,7 @@ SECRET_KEY = 'az_z!g6p^n-%^my9_j6e7lotorq^(ut!q3i7dav5spo@*crx&n'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -83,8 +83,14 @@ WSGI_APPLICATION = 'carnival.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+#        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': 'djangoapp',
+        'USER': 'root',
+        'PASSWORD': 'djangoapppasswd',
+        'HOST': 'db',
+        'PORT': '3306',
+
     }
 }
 
